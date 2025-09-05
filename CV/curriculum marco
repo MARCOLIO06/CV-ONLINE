@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nombre Apellido — Currículum</title>
+  <meta name="description" content="Currículum online: datos personales, experiencia, formación, habilidades y proyectos." />
+  <meta name="author" content="Tu nombre" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Currículum — Tu Nombre" />
+  <meta property="og:description" content="Portafolio y CV online con experiencia, proyectos y contacto." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/preview.jpg" />
+  <meta property="og:url" content="https://tu-dominio-o-github-pages" />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --panel:#111827;     /* gray-900 */
+      --text:#e5e7eb;      /* gray-200 */
+      --muted:#94a3b8;     /* slate-400 */
+      --brand:#22d3ee;     /* cyan-400 */
+      --chip:#1f2937;      /* gray-800 */
+      --border:#1f2937;
+      --link:#38bdf8;      /* sky-400 */
+    }
+    .light{
+      --bg:#ffffff; --panel:#f8fafc; --text:#0f172a; --muted:#475569; --brand:#0891b2; --chip:#e2e8f0; --border:#e5e7eb; --link:#0369a1;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:var(--bg);color:var(--text);}
+    .container{max-width:1000px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:blur(8px);background:color-mix(in oklab, var(--bg) 75%, transparent);border-bottom:1px solid var(--border);z-index:10}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .links a{margin:0 8px;text-decoration:none;color:var(--muted);font-weight:600}
+    .links a:hover{color:var(--link)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--border)}
+    .brand h1{font-size:18px;margin:0}
+    .chip{display:inline-flex;align-items:center;gap:6px;background:var(--chip);border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+    .grid{display:grid;gap:20px}
+    @media(min-width:900px){.grid{grid-template-columns:320px 1fr}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:20px}
+    h2{margin:0 0 12px 0;font-size:20px}
+    h3{margin:0 0 6px 0;font-size:16px}
+    p{margin:8px 0;color:var(--muted)}
+    ul{padding-left:18px;margin:10px 0}
+    li{margin:6px 0}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#001018;border:none;border-radius:12px;padding:10px 14px;font-weight:700;text-decoration:none}
+    .btn:focus,.btn:hover{outline:2px solid var(--link)}
+    .badges{display:flex;flex-wrap:wrap;gap:8px}
+    .badge{background:var(--chip);border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:12px}
+    .two-col{display:grid;gap:10px}
+    @media(min-width:700px){.two-col{grid-template-columns:1fr 1fr}}
+    .project{display:grid;gap:12px;grid-template-columns:120px 1fr}
+    .project img{width:120px;height:80px;object-fit:cover;border-radius:10px;border:1px solid var(--border)}
+    footer{margin:40px 0 20px;color:var(--muted);text-align:center}
+    /* Imprimible */
+    @media print{
+      header, .theme-toggle, .filters, #backToTop{display:none}
+      body{background:#fff;color:#000}
+      .card{border:1px solid #ccc}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nombre Apellido",
+    "jobTitle": "Tu rol o especialidad",
+    "image": "https://via.placeholder.com/256",
+    "url": "https://tu-dominio-o-github-pages",
+    "sameAs": [
+      "https://github.com/tuusuario",
+      "https://www.linkedin.com/in/tuusuario/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=256&auto=format&fit=crop" alt="Foto de perfil" />
+          <div>
+            <h1>Nombre Apellido</h1>
+            <span class="chip">Rol • Ciudad, País</span>
+          </div>
+        </div>
+        <div class="links" aria-label="Navegación principal">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#formacion">Formación</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <button class="chip theme-toggle" id="themeToggle" title="Cambiar tema">🌓 Tema</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container grid" id="contenido">
+    <!-- Lateral -->
+    <aside class="card" aria-label="Resumen y datos personales">
+      <h2 id="sobre-mi">Sobre mí</h2>
+      <p>
+        Breve resumen profesional (3–4 líneas). Qué haces, en qué destacas y qué estás buscando.
+      </p>
+      <div class="two-col">
+        <div>
+          <h3>Datos</h3>
+          <ul>
+            <li>📍 Ciudad, País</li>
+            <li>🗣️ Español • Inglés (B2)</li>
+            <li>💼 Disponible para: remoto/híbrido</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Links</h3>
+          <ul>
+            <li><a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a></li>
+            <li><a href="https://github.com/tuusuario" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/tuusuario/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="assets/CV.pdf" target="_blank" rel="noopener">Descargar CV (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Competencias clave</h3>
+      <div class="badges">
+        <span class="badge">Comunicación</span>
+        <span class="badge">Trabajo en equipo</span>
+        <span class="badge">Resolución de problemas</span>
+        <span class="badge">Gestión del tiempo</span>
+      </div>
+
+      <h3 style="margin-top:14px">Tecnologías</h3>
+      <div class="badges">
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">Git / GitHub</span>
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <section class="grid" style="gap:20px">
+      <article class="card" id="experiencia">
+        <h2>Experiencia</h2>
+        <div>
+          <h3>Empresa X — Puesto (2023–Presente)</h3>
+          <p>Logros y responsabilidades principales en viñetas:</p>
+          <ul>
+            <li>• Implementé … logrando …</li>
+            <li>• Automatizé … reduciendo …</li>
+            <li>• Coordiné … con un equipo de …</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Empresa Y — Puesto (2021–2023)</h3>
+          <ul>
+            <li>• Diseñé …</li>
+            <li>• Mejoré …</li>
+            <li>• Mantuve …</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" id="proyectos">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <h2>Proyectos</h2>
+          <div class="filters" aria-label="Filtros de proyectos">
+            <button class="chip" data-filter="all">Todos</button>
+            <button class="chip" data-filter="web">Web</button>
+            <button class="chip" data-filter="desktop">Escritorio</button>
+            <button class="chip" data-filter="juegos">Juegos</button>
+          </div>
+        </div>
+
+        <div class="grid" id="listaProyectos" style="grid-template-columns:1fr;gap:16px">
+          <!-- Proyecto 1 -->
+          <div class="project" data-tags="web">
+            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=600&auto=format&fit=crop" alt="Miniatura proyecto web" />
+            <div>
+              <h3>Portfolio estático</h3>
+              <p>Landing en HTML/CSS/JS con diseño responsive.</p>
+              <a class="btn" href="https://github.com/tuusuario/portfolio" target="_blank" rel="noopener">Ver repositorio</a>
+            </div>
+          </div>
+          <!-- Proyecto 2 -->
+          <div class="project" data-tags="desktop">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=600&auto=format&fit=crop" alt="Miniatura app escritorio" />
+            <div>
+              <h3>Gestor de tareas</h3>
+              <p>Aplicación de escritorio con persistencia local.</p>
+              <a class="btn" href="https://github.com/tuusuario/task-manager" target="_blank" rel="noopener">Ver repositorio</a>
+            </div>
+          </div>
+          <!-- Proyecto 3 -->
+          <div class="project" data-tags="juegos">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=600&auto=format&fit=crop" alt="Miniatura juego 2D" />
+            <div>
+              <h3>Juego 2D</h3>
+              <p>Juego simple con colisiones y IA básica.</p>
+              <a class="btn" href="https://github.com/tuusuario/juego-2d" target="_blank" rel="noopener">Ver repositorio</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" id="habilidades">
+        <h2>Habilidades técnicas</h2>
+        <div class="two-col">
+          <ul>
+            <li>Maquetación responsive (Flexbox, Grid)</li>
+            <li>Accesibilidad (WAI-ARIA)</li>
+            <li>Control de versiones (Git)</li>
+          </ul>
+          <ul>
+            <li>Testing básico</li>
+            <li>Consumo de APIs REST</li>
+            <li>Despliegue (GitHub Pages)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" id="formacion">
+        <h2>Formación</h2>
+        <ul>
+          <li>Título / Curso — Institución (Año)</li>
+          <li>Certificación — Proveedor (Año)</li>
+        </ul>
+      </article>
+
+      <article class="card" id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Te interesa colaborar? Escríbeme o agenda una reunión.</p>
+        <div class="two-col">
+          <a class="btn" href="mailto:tucorreo@ejemplo.com">✉️ Enviar correo</a>
+          <a class="btn" href="https://cal.com/tuusuario" target="_blank" rel="noopener">📅 Agendar</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <button id="backToTop" class="chip" style="position:fixed;right:16px;bottom:16px">⬆️ Arriba</button>
+
+  <footer>
+    Hecho con ♥ por Tu Nombre — <a href="https://github.com/tuusuario/cv-online" target="_blank" rel="noopener">Repositorio GIT</a>
+  </footer>
+
+  <script>
+    // Tema persistente
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme') || 'dark';
+    if(saved==='light') document.documentElement.classList.add('light');
+    themeToggle?.addEventListener('click',()=>{
+      document.documentElement.classList.toggle('light');
+      localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // Volver arriba
+    const backBtn = document.getElementById('backToTop');
+    backBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll',()=>{
+      backBtn.style.display = window.scrollY>400 ? 'inline-flex' : 'none';
+    });
+
+    // Filtro de proyectos
+    const buttons = document.querySelectorAll('[data-filter]');
+    const cards = document.querySelectorAll('#listaProyectos .project');
+    buttons.forEach(b=>b.addEventListener('click',()=>{
+      const tag = b.dataset.filter;
+      cards.forEach(p=>{
+        p.style.display = (tag==='all' || p.dataset.tags.includes(tag)) ? 'grid' : 'none';
+      });
+    }));
+
+    // Accesibilidad: foco visible en teclado
+    function handleFirstTab(e){
+      if(e.key==='Tab'){
+        document.body.classList.add('user-is-tabbing');
+        window.removeEventListener('keydown', handleFirstTab);
+      }
+    }
+    window.addEventListener('keydown', handleFirstTab);
+  </script>
+</body>
+</html>
